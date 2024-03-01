@@ -1,0 +1,25 @@
+
+// $vantbtn1: pink;
+// $vantbtn2: rgb(192, 211, 255);
+// $backgroundColor: var(--background-color, #181616);
+
+:root {
+  --btn-color1:rgb(128, 117, 0);
+  --change-color:rgb(128, 51, 0);
+
+  --main-text-color-pink: pink;
+  --main-text-color-blue: blue;
+
+  --main-bg-color-white: white;
+  --main-bg-color-black: black;
+
+  // color: var(--main-text-color-pink);
+  // background-color: var(--main-bg-color-black);
+  
+  --van-button-primary-background: var(--btn-color1);
+}
+
+// :root:root {
+//   // 覆盖vant的主题色
+//   --van-button-primary-background: #{$vantbtn2};
+// }
