@@ -60,6 +60,7 @@ const changeActive = (actIndex) => {
   left: 0;
   width: 750px;
   height: 160px;
+  background-color: #fff;
   display: flex;
   align-items: center;
   justify-content: space-between;
