@@ -114,10 +114,36 @@
     <div class="package mt36">
       <span class="black size32 bold">挖矿节点套餐</span>
       <div class="pOne">
-
+        <div class="pointNum">20/20</div>
+        <div class="title">
+          <img src="@/assets/luxcorn.png" alt="">
+          <span class="size32 b500">顶尖节点</span>
+        </div>
+        <div class="ml42">
+          <span class="size35 color1 bold mr10">30,000 USDT</span>
+          <span class="grey size24">价格</span>
+        </div>
+        <div class="line"></div>
+        <div class="tags">
+          <span>1000T算力</span>
+          <span class="ml42">5%业绩收益</span>
+        </div>
+        <div class="btn">立即购买</div>
       </div>
       <div class="pTwo">
-
+        <div class="title">
+          <img src="@/assets/luxcorn.png" alt="">
+          <span class="size32 b500">全球节点</span>
+        </div>
+        <div class="ml42">
+          <span class="size35 color2 bold mr10">30,000 USDT</span>
+          <span class="grey size24">价格</span>
+        </div>
+        <div class="line"></div>
+        <div class="tags">
+          <span>5%业绩收益</span>
+        </div>
+        <div class="btn">立即购买</div>
       </div>
     </div>
 
@@ -125,7 +151,30 @@
     <div class="pledge mt36">
       <span class="black size32 bold">质押池</span>
       <div class="content">
-
+        <div class="title">
+          <img src="@/assets/luxcorn.png" alt="">
+          <span class="size26 b500">LUX协议</span>
+        </div>
+        <div class="num">
+          <span class="grey">当前质押量</span>
+          <span class="color2 b500">1,785,956.65236 USDT</span>
+        </div>
+        <div class="line"></div>
+        <div class="data">
+          <div class="dataItem">
+            <div class="size24 black b500">100 USDT</div>
+            <div class="size24 grey">最低</div>
+          </div>
+          <div class="dataItem">
+            <div class="size24 color2 b500">4x</div>
+            <div class="size24 grey">收益比例</div>
+          </div>
+          <div class="dataItem">
+            <div class="size24 color2 b500">175.50%</div>
+            <div class="size24 grey">年收益</div>
+          </div>
+        </div>
+        <div class="btn">立即质押</div>
       </div>
     </div>
   </div>
@@ -333,13 +382,61 @@
 .package {
   margin: 0 36px;
   .pOne {
+    position: relative;
     margin-top: 26px;
     width: 678px;
     height: 420px;
     background-image: url('@/assets/packageBg1.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
-    
+    .title{
+      padding-top: 48px;
+      margin-left: 42px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 6px;
+      }
+    }
+    .pointNum {
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      width: 136px;
+      height: 50px;
+      border-radius: 96px;
+      background-color: #E2F6F4;
+      color: #2ED8C1;
+      line-height: 50px;
+      text-align: center;
+    }
+    .line {
+      margin: 0 auto;
+      margin-top: 30px;
+      border-top: 1px dashed #2ED8C1;
+      width: 620px;
+    }
+    .tags {
+      margin-top: 42px;
+      color: #A5A5A5;
+      font-size: 24px;
+      margin-left: 42px;
+    }
+    .btn {
+      margin: 0 auto;
+      margin-top: 42px;
+      width: 600px;
+      height: 86px;
+      background-color: #2ED8C1;
+      color: #FFFFFF;
+      border-radius: 96px;
+      line-height: 86px;
+      font-size: 27px;
+      text-align: center;
+      font-weight: 500;
+    }
   }
   .pTwo {
     margin-top: 26px;
@@ -348,6 +445,42 @@
     background-image: url('@/assets/packageBg2.png');
     background-size: 100% 100%;
     background-repeat: no-repeat;
+    .title{
+      padding-top: 48px;
+      margin-left: 42px;
+      display: flex;
+      align-items: center;
+      img {
+        width: 40px;
+        height: 40px;
+        margin-right: 6px;
+      }
+    }
+    .line {
+      margin: 0 auto;
+      margin-top: 30px;
+      border-top: 1px dashed #184AFF;
+      width: 620px;
+    }
+    .tags {
+      margin-top: 42px;
+      color: #A5A5A5;
+      font-size: 24px;
+      margin-left: 42px;
+    }
+    .btn {
+      margin: 0 auto;
+      margin-top: 42px;
+      width: 600px;
+      height: 86px;
+      background-color: #184AFF;
+      color: #FFFFFF;
+      border-radius: 96px;
+      line-height: 86px;
+      font-size: 27px;
+      text-align: center;
+      font-weight: 500;
+    }
   }
   
 }
@@ -356,14 +489,65 @@
   margin: 0 36px;
   .content {
     margin-top: 26px;
+    padding: 26px;
+    padding-top: 32px;
+    box-sizing: border-box;
     width: 678px;
     height: 420px;
     background-image: url('@/assets/packageBg2.png');
     background-size: 100% 100%;
+    
+    .title {
+      img {
+        width: 22px;
+        height: 28px;
+        margin-right: 10px;
+      }
+    }
+    .num{
+      padding-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 24px;
+    }
+    .line {
+      margin: 0 auto;
+      margin-top: 30px;
+      border-top: 1px dashed #E8E8E8;
+      width: 620px;
+    }
+    .data {
+      margin-top: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .dataItem{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+    }
+    .btn {
+      margin: 0 auto;
+      margin-top: 42px;
+      width: 600px;
+      height: 86px;
+      background-color: #184AFF;
+      color: #FFFFFF;
+      border-radius: 96px;
+      line-height: 86px;
+      font-size: 27px;
+      text-align: center;
+      font-weight: 500;
+    }
   }
 }
 .black {
   color: #000000;
+}
+.grey {
+  color: #A5A5A5;
 }
 .color1 {
   color: #36DCC5;
@@ -380,6 +564,9 @@
 .size32 {
   font-size: 32px;
 }
+.size35 {
+  font-size: 35px;
+}
 
 .bold {
   font-weight: bold;
@@ -391,8 +578,14 @@
   text-align: center;
 }
 
+.mr10{
+  margin-right: 10px;
+}
 .ml36 {
   margin-left: 36px;
+}
+.ml42{
+  margin-left: 42px;
 }
 .mt20 {
   margin-top: 20px;

@@ -1,4 +1,5 @@
 import { createApp } from 'vue'
+import * as echarts from 'echarts'
 import cn from "@/lang/cn.js";
 import en from "@/lang/en.js";
 import jp from "@/lang/jp.js";
@@ -32,6 +33,8 @@ const i18n = createI18n({
 
 const app = createApp(App);
 
+
+app.config.globalProperties.$echarts = echarts
 app.config.globalProperties.$require_ = require_;
 app.use(router)
 app.use(i18n)
