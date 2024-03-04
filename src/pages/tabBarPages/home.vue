@@ -71,9 +71,7 @@
               +10%
             </div>
           </div>
-          <div>
-            图
-          </div>
+          <div id="myChart" style="width: 38vw;height: 18vw;"></div>
         </div>
           <table>
             <tr>
@@ -180,10 +178,54 @@
   </div>
 </template>
 
-<script>
-  export default {
-    
-  }
+<script setup>
+ import * as echarts from 'echarts'
+import {onMounted } from 'vue'
+onMounted(() => {
+  let myChart = echarts.init(document.getElementById("myChart"));
+  myChart.setOption({
+    xAxis: {
+      show:false,
+      type: 'category',
+      boundaryGap: false,
+      data: []
+    },
+    yAxis: {
+      show: false,
+      type: 'value',
+    },
+    series: [
+      {
+        data: [0, 100, 200, 300, 420, 410, 410,410,420,440,460],
+        type: 'line',
+        areaStyle: {},
+        symbol: 'none', // 设置为 'none' 隐藏折点
+        color:{ //面积颜色
+          type: 'linear',
+          x: 0,
+          y: 0,
+          x2: 0,
+          y2: 1,
+          colorStops: [{
+              offset: 0, color: '#36DCC5'
+          }, {
+              offset: 1, color: '#FFFFFF'
+          }],
+          global: false // 缺省为 false
+        }
+      }
+    ],
+    lineStyle: { //折线颜色
+      color: '#184AFF' 
+    },
+    grid: { //图表距离画布的边边的留白区
+      top:'4px',
+      left:'12px',
+      right:'0px',
+      bottom:'12px'
+    }
+  })
+})
 </script>
 
 <style lang="scss" scoped>
