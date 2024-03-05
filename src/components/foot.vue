@@ -24,15 +24,15 @@ const items = ref([
       },
       { name: '资产',
         img:'../assets/tabbar/asset_0.png',
-        path:''
+        path:'asset'
       },
       { name: '订单',
         img:'../assets/tabbar/order_0.png',
-        path:''
+        path:'order'
       },
       { name: '我的',
         img:'../assets/tabbar/mine_0.png',
-        path:''
+        path:'mine'
       }
     ]) 
 const activeIndex = ref(0) ;

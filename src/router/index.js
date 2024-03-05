@@ -3,6 +3,9 @@ import { createRouter, createWebHashHistory } from "vue-router";
 import Layout from "@/layout/mainLayout.vue";
 import Home from "@/pages/tabBarPages/home.vue";
 import Output from "@/pages/tabBarPages/output.vue";
+import Asset from "@/pages/tabBarPages/asset.vue";
+import Order from "@/pages/tabBarPages/order.vue";
+import Mine from "@/pages/tabBarPages/mine.vue";
 import Test from "@/pages/test/index.vue";
 const routes = [
   { path:"/", 
@@ -19,6 +22,18 @@ const routes = [
       {
         path:"output",
         component: Output
+      },
+      {
+        path:"asset",
+        component: Asset
+      },
+      {
+        path:"order",
+        component: Order
+      },
+      {
+        path:"mine",
+        component: Mine
       }
     ]
   },

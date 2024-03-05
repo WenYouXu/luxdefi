@@ -71,7 +71,7 @@
               +10%
             </div>
           </div>
-          <div id="myChart" style="width: 38vw;height: 18vw;"></div>
+          <div :id="chartId" style="width: 38vw;height: 18vw;"></div>
         </div>
           <table>
             <tr>
@@ -180,9 +180,13 @@
 
 <script setup>
  import * as echarts from 'echarts'
-import {onMounted } from 'vue'
+import { ref, watch, onMounted } from 'vue'
+
+const chartId = ref("myChart" + Date.now() + Math.random())
+
 onMounted(() => {
-  let myChart = echarts.init(document.getElementById("myChart"));
+  let myChart = echarts.init(document.getElementById(chartId.value));
+  
   myChart.setOption({
     xAxis: {
       show:false,
