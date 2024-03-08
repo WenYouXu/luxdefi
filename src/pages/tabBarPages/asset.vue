@@ -8,7 +8,7 @@
       <div class="card">
         <div class="size26">总收益折合 LUX</div>
         <div class="size45 b500">0.00</div>
-        <div class="rate">+0%</div>
+        <div class="rate1">+0%</div>
         <div class="f-sb-c size24 mt50"><div>已产出</div><div>总产值</div></div>
         <van-progress
           :percentage="30"
@@ -29,25 +29,54 @@
 
       <div class="balance">
         <div class="usdt">
-
+          <div class="size24 ">可用余额(USDT)</div>
+          <div class="black2 size45 b500">0.00</div>
+          <div class="btn">
+            <div class="left">提币</div>
+            <div class="right">存入</div>
+          </div>
         </div>
         <div class="lux">
-
+          <div class="size24 ">可用余额(LUX)</div>
+          <div class="black2 size45 b500">0.00</div>
+          <div class="btn">
+            <div class="left">提币</div>
+            <div class="right">存入</div>
+          </div>
         </div>
       </div>
 
       <div class="rate">
         <div class="left">
-
+          <div class="node">Promotion node</div>
         </div>
         <div class="right">
-
+          <div class="black size32 b500">LUX/USDT</div>
+          <div class="color2 size35 bold ml10">≈ 0.0850</div>
         </div>
       </div>
 
-      <div class="manageAward"></div>
+      <div class="manageAward">
+        <div class="top">
+          <div>理财质押奖励</div>
+          <div class="color2">></div>
+        </div>
+        <div class="bottom">
+          <div>分红比例: <span class="color2 bold">0%</span></div>
+          <div class="total">总收益: <span class="color2 bold">0</span></div>
+        </div>
+      </div>
 
-      <div class="pointAward"></div>
+      <div class="pointAward">
+        <div class="top">
+          <div>节点奖励</div>
+          <div class="color2">></div>
+        </div>
+        <div class="bottom">
+          <div>分红比例: <span class="color2 bold">0%</span></div>
+          <div class="total">总收益: <span class="color2 bold">0</span></div>
+        </div>
+      </div>
     </div>
     
   </div>
@@ -70,7 +99,7 @@ import { ref, watch, onMounted } from 'vue'
   z-index: 0;
   height: 212px;
   width: 750px;
-  background: linear-gradient(180deg, #9FB4FF, #ffffff);
+  background: linear-gradient(180deg, #9FB4FF, #F5F7FA);
 }
 .content{
   position: relative;
@@ -88,7 +117,7 @@ import { ref, watch, onMounted } from 'vue'
     background: #184AFF;
     border-radius: 38px;
     color: #ffffff;
-    .rate{
+    .rate1{
       width: 147px;
       height: 45px;
       border-radius: 23px;
@@ -118,14 +147,68 @@ import { ref, watch, onMounted } from 'vue'
     .usdt{
       width: 328px;
       height: 276px;
+      padding: 32px 25px;
+      box-sizing: border-box;
       background-color: #DEE6FF;
       border-radius: 38px;
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 36px;
+        font-weight: 500;
+        .left {
+          width: 130px;
+          height: 68px;
+          background-color: #184AFF;
+          color: #FFFFFF;
+          line-height: 68px;
+          text-align: center;
+          border-radius: 25px;
+        }
+        .right {
+          width: 130px;
+          height: 68px;
+          border: 1px solid #184AFF;
+          color: #184AFF;
+          line-height: 68px;
+          text-align: center;
+          border-radius: 25px;
+        }
+      }
     }
     .lux{
       width: 328px;
       height: 276px;
+      padding: 32px 25px;
+      box-sizing: border-box;
       background-color: #BCF1EA;
       border-radius: 38px;
+      .btn {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 36px;
+        font-weight: 500;
+        .left {
+          width: 130px;
+          height: 68px;
+          background-color: #2ED8C1;
+          color: #FFFFFF;
+          line-height: 68px;
+          text-align: center;
+          border-radius: 25px;
+        }
+        .right {
+          width: 130px;
+          height: 68px;
+          border: 1px solid #2ED8C1;
+          color: #2ED8C1;
+          line-height: 68px;
+          text-align: center;
+          border-radius: 25px;
+        }
+      }
     }
   }
   .rate{
@@ -133,17 +216,31 @@ import { ref, watch, onMounted } from 'vue'
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     .left {
       width: 328px;
       height: 156px;
+      padding-left: 26px;
+      padding-top: 20px;
+      box-sizing: border-box;
       border-radius: 38px;
       background-color: #184AFF;
+      color: #ffffff;
+      font-size: 30px;
+      font-weight: 600;
+      .node {
+        max-width: 158px;
+        line-height: 35px;
+      }
     }
     .right {
       width: 328px;
       height: 156px;
+      padding: 26px 34px;
+      box-sizing: border-box;
       border-radius: 38px;
       background-color: #FFFFFF;
+      
     }
   }
 
@@ -151,22 +248,65 @@ import { ref, watch, onMounted } from 'vue'
     margin-top: 24px;
     width: 678px;
     height: 186px;
+    padding: 28px;
+    box-sizing: border-box;
     background-color: #FFFFFF;
     border-radius: 38px;
+    color: #000000;
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 27px;
+      padding-bottom: 22px;
+      border-bottom: 1px dashed #E8E8E8;
+    }
+    .bottom{
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      font-size: 27px;
+      .total{
+        margin-left: 190px;
+      }
+    }
   }
 
   .pointAward{
     margin-top: 24px;
     width: 678px;
     height: 186px;
+    padding: 28px;
+    box-sizing: border-box;
     background-color: #FFFFFF;
     border-radius: 38px;
+    color: #000000;
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 27px;
+      padding-bottom: 22px;
+      border-bottom: 1px dashed #E8E8E8;
+    }
+    .bottom{
+      margin-top: 26px;
+      display: flex;
+      align-items: center;
+      font-size: 27px;
+      .total{
+        margin-left: 190px;
+      }
+    }
   }
 }
 
 
 .black {
   color: #000000;
+}
+.black2 {
+  color: #3D3D3D;
 }
 .grey {
   color: #A5A5A5;
@@ -205,6 +345,9 @@ import { ref, watch, onMounted } from 'vue'
 
 .mr10{
   margin-right: 10px;
+}
+.ml10{
+  margin-left: 10px;
 }
 .ml36 {
   margin-left: 36px;
