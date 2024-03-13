@@ -239,7 +239,10 @@ onMounted(() => {
 .banner{
   height: 360px;
   width: 750px;
-  background: linear-gradient(180deg, #184AFF, #ffffff);
+  // background: linear-gradient(180deg, #184AFF, #ffffff);
+  background: url('@/assets/mineBg.png');
+  background-size: 100% 100%;
+  
   .avatar{
     width: 60px;
     height: 60px;

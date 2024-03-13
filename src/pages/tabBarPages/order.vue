@@ -63,21 +63,21 @@
       <div class="bottomBg"></div>
 
       <div class="content">
-        <div class="size50 b500">节点</div>
+        <div class="size50 b500">理财质押</div>
         <van-progress
           :percentage="50"
           :show-pivot="false"
           :stroke-width="7"
-          color="#184AFF"
+          color="#2ED8C1"
           track-color="#DEE6FF"
-          style="border-radius: 8px; margin-top: 8px;width: 16vw;transform: rotate(-180deg);"
+          style="border-radius: 8px; margin-top: 8px;width: 16vw;"
         >
         </van-progress>
 
         <div class="total">
           <div class="right">
-            <div class="black b500 ">预购节点总价值</div>
-            <span class="color2 size58 bold ml10">≈ 40000</span><span class="ml10">USDT</span>
+            <div class="black b500 ">质押理财订单总待释放</div>
+            <span class="color1 size58 bold ml10">≈ 1500</span><span class="ml10">USDT</span>
           </div>
         </div>
 
@@ -301,7 +301,7 @@ const option1 = [
           max-width: 180px;
         }
         .van-dropdown-menu__bar{
-          background-color: #184AFF;
+          background-color: #2ED8C1;
           border-radius: 26px;
           padding-right: 26px;
           padding-left: 10px;
@@ -321,7 +321,7 @@ const option1 = [
           color: #000000;
           font-size: 24px;
           .van-dropdown-item__icon{
-            color: #184AFF;
+            color: #2ED8C1;
           }
         }
         .van-cell {
