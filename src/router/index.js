@@ -6,6 +6,9 @@ import Output from "@/pages/tabBarPages/output.vue";
 import Asset from "@/pages/tabBarPages/asset.vue";
 import Order from "@/pages/tabBarPages/order.vue";
 import Mine from "@/pages/tabBarPages/mine.vue";
+
+import OrderDetail from "@/pages/orderDetail/index.vue";
+import Setting from "@/pages/setting/index.vue";
 import Test from "@/pages/test/index.vue";
 const routes = [
   { path:"/", 
@@ -36,6 +39,14 @@ const routes = [
         component: Mine
       }
     ]
+  },
+  {
+    path:"/orderDetail",
+    component:OrderDetail
+  },
+  {
+    path:"/setting",
+    component:Setting
   },
   { path:"/test", component: Test }
 ]

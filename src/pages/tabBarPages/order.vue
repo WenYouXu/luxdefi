@@ -32,27 +32,18 @@
 
         <div class="list">
           <div class="listUl">
-            <div class="listLi">
+            <div class="listLi" v-for="(item,index) in recordList">
               <div>
                 <div class="b500">顶尖节点-挖矿节点套餐</div>
                 <div class="color2">30000USDT</div>
               </div>
               <div class="grey">2024-02-15 14:46</div>
             </div>
-            <div class="listLi">
-              <div>
-                <div class="b500">顶尖节点-挖矿节点套餐</div>
-                <div class="color2">30000USDT</div>
-              </div>
-              <div class="grey">2024-02-15 14:46</div>
+            <div v-if="recordList.length == 0" class="noData">
+              <img src="@/assets/noData.png" alt="">
+              <div class="buyBtn">立即质押</div>
             </div>
-            <div class="listLi">
-              <div>
-                <div class="b500">顶尖节点-挖矿节点套餐</div>
-                <div class="color2">30000USDT</div>
-              </div>
-              <div class="grey">2024-02-15 14:46</div>
-            </div>
+
           </div>
         </div>
       </div>
@@ -81,6 +72,19 @@
           </div>
         </div>
 
+        <div class="f-sb-c mt24">
+          <div>
+            <div class="size24">有效订单总价值</div>
+            <div class="size30 b600">≈ 1500 USDT</div>
+          </div>
+          <div>
+            <div class="size24" style="text-align: right;">累计释放奖励</div>
+            <div class="size30 b600">≈ 1500 USDT</div>
+          </div>
+        </div>
+
+        <div class="submit">立即质押</div>
+
         <div class="selection">
           <span>订单记录</span>
           <van-dropdown-menu :overlay="false">
@@ -90,26 +94,16 @@
 
         <div class="list">
           <div class="listUl">
-            <div class="listLi">
+            <div class="listLi" v-for="(item,index) in recordList">
               <div>
                 <div class="b500">顶尖节点-挖矿节点套餐</div>
-                <div class="color2">30000USDT</div>
+                <div class="color1">30000USDT</div>
               </div>
               <div class="grey">2024-02-15 14:46</div>
             </div>
-            <div class="listLi">
-              <div>
-                <div class="b500">顶尖节点-挖矿节点套餐</div>
-                <div class="color2">30000USDT</div>
-              </div>
-              <div class="grey">2024-02-15 14:46</div>
-            </div>
-            <div class="listLi">
-              <div>
-                <div class="b500">顶尖节点-挖矿节点套餐</div>
-                <div class="color2">30000USDT</div>
-              </div>
-              <div class="grey">2024-02-15 14:46</div>
+            <div v-if="recordList.length == 0" class="noData">
+              <img src="@/assets/noData.png" alt="">
+              <div class="pledgeBtn">立即质押</div>
             </div>
           </div>
         </div>
@@ -129,12 +123,13 @@ const option1 = [
   { text: '新款商品 ', value: 1 },
   { text: '活动商品 ', value: 2 },
 ];
+const recordList = ref([])
 </script>
 
 <style lang="scss" scoped>
 .order {
-  // position: relative;
-  // margin-bottom: 250px;
+  color: #000000;
+  font-size: 27px;
 }
 .pointPage {
   min-height: 100vh;
@@ -340,6 +335,7 @@ const option1 = [
     }
 
     .list {
+      position: relative;
       height: 865px;
       margin-top: 38px;
       border-radius: 38px;
@@ -355,9 +351,56 @@ const option1 = [
         }
       }
     }
+
+    .submit{
+      margin-top: 42px;
+      width: 676px;
+      height: 96px;
+      line-height: 96px;
+      text-align: center;
+      color: #FFFFFF;
+      font-size: 27px;
+      font-weight: 500;
+      background-color: #2ED8C1;
+      border-radius: 96px;
+    }
   }
 }
 
+.noData {
+  position: absolute;
+  top: 186px;
+  left: 50%;
+  transform: translate(-50%);
+  img {
+    width: 350px;
+    height: 310px;
+  }
+  .pledgeBtn{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 225px;
+    height: 80px;
+    color: #FFFFFF;
+    background-color: #2ED8C1;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 96px;
+  }
+  .buyBtn{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    width: 225px;
+    height: 80px;
+    color: #FFFFFF;
+    background-color: #184AFF;
+    line-height: 80px;
+    text-align: center;
+    border-radius: 96px;
+  }
+}
 .black {
   color: #000000;
 }
@@ -374,8 +417,11 @@ const option1 = [
   color: #184AFF;
 }
 
-.size35 {
-  font-size: 35px;
+.size24 {
+  font-size: 24px;
+}
+.size30 {
+  font-size: 30px;
 }
 .size50{
   font-size: 50px;
@@ -389,6 +435,9 @@ const option1 = [
 }
 .b500 {
   font-weight: 500;
+}
+.b600 {
+  font-weight: 600;
 }
 .center{
   text-align: center;
@@ -409,7 +458,8 @@ const option1 = [
 .mt10 {
   margin-top: 10px;
 }
-.mt50 {
-  margin-top: 50px;
+.mt24 {
+  margin-top: 24px;
 }
+
 </style>

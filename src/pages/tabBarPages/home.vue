@@ -3,7 +3,7 @@
 
     <div class="banner">
       <div class="bannerTop">
-        <div class="f-jc-c">
+        <div class="f-c-c">
           <div class="avatar"></div>
           <span class="name">Saber</span>
         </div>

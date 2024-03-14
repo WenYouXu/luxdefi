@@ -14,7 +14,7 @@
           </div>
           <div class="right">
             <img src="@/assets/night.png" alt="">
-            <img src="@/assets/setting.png" alt="">
+            <img @click="jump('/setting')" src="@/assets/setting.png" alt="">
           </div>
         </div>
         <div class="bottom">
@@ -60,13 +60,30 @@
           <img src="@/assets/shareBg.png" alt="">
         </div>
       </div>
+      <!-- <div class="container">
+        <div class="sliderbar">
+          <p>sliderbar</p>
+        </div>
+        <div class="main">
+          <p>maintain</p>
+          <p>maintain</p>
+          <p>maintain</p>
+        </div>
+        
+      </div> -->
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted } from 'vue'
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
+
+const jump = (path) => {
+  router.push({path})
+}
   
 </script>
 
@@ -233,7 +250,20 @@ import { ref, onMounted } from 'vue'
   
 }
 
-
+.container {
+  background-color: pink;
+  overflow: hidden;
+  .sliderbar {
+    float: left;
+    width: 100px;
+    background-color: yellow;
+  }
+  .main {
+    margin-left: 120px;
+    background-color: #184AFF;
+    
+  }
+}
 
 .black {
   color: #000000;

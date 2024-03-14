@@ -58,6 +58,7 @@ const changeActive = (actIndex) => {
   position: fixed;
   bottom: 0;
   left: 0;
+  z-index: 99;
   width: 750px;
   height: 160px;
   background-color: #fff;
