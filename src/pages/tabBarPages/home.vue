@@ -4,7 +4,7 @@
     <div class="banner">
       <div class="bannerTop">
         <div class="f-c-c">
-          <div class="avatar"></div>
+          <img class="avatar" src="@/assets/defaultAvatar.png"/>
           <span class="name">Saber</span>
         </div>
         <img class="setting" src="../../assets/setting.png" alt="">

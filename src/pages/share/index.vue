@@ -54,10 +54,14 @@
   </div>
 </template>
 
-<script>
-  export default {
-    
-  }
+<script setup>
+import { useRouter } from 'vue-router';
+
+const router = useRouter()
+
+const back = () => {
+  router.back()
+}
 </script>
 
 <style lang="scss" scoped>
