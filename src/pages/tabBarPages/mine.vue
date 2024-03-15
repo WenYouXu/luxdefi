@@ -46,7 +46,7 @@
       </div>
 
       <div class="share">
-        <div class="top">
+        <div class="top" @click="jump('/share')">
           <div>直推人数</div>
           <div>0 <span class="color2">></span></div>
         </div>

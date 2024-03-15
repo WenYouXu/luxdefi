@@ -91,6 +91,7 @@ const back = () => {
   }
 
   .loginBtn{
+    margin: 0 auto;
     margin-top: 242px;
     width: 652px;
     height: 96px;

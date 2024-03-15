@@ -4,15 +4,15 @@
     <div class="headBg"></div>
 
     <div class="content">
-      <div class="nav"> &lt; 更换语言</div>
+      <div class="nav" @click="back"> &lt; {{ $t('langue.changeLang') }}</div>
 
       <div class="settingUl">
-        <div class="settingLi" v-for="(item,index) in list" :key="item.index">
+        <div class="settingLi" @click="selectLanguage(item,index)" v-for="(item,index) in list" :key="item.index">
           <div class="left">
-            <img :src="$require_(`${item.img}`)" alt="">
+            <img :src="item.img" :alt="item.name">
             <div>{{ item.name }}</div>
           </div>
-          <div class="btn"></div>
+          <div class="btn" :class="{selected: activeIndex === index}"></div>
         </div>
       </div>
     </div>
@@ -22,21 +22,48 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
+import { useRouter } from 'vue-router';
+import { useI18n } from "vue-i18n"; 
+
+const router = useRouter()
+
+const { locale } = useI18n();
+const { t } = useI18n();
+const activeIndex = ref(1)
+const require_ = (url) => {
+  return new URL(`${url}`, import.meta.url).href;
+};
 
 const list = ref([
   { name: 'English',
-    img: '../../assets/english.png',
+    value: 'en',
+    img: require_('../../assets/english.png') ,
   },
   { name: '简体中文',
-    img: '../../assets/china.png',
+    value: 'cn',
+    img: require_('../../assets/china.png'),
   },
   { name: '日本',
-    img: '../../assets/japan.png',
+    value: 'jp',
+    img: require_('../../assets/japan.png'),
   },
   { name: '한국어',
-    img: '../../assets/korea.png',
+    value: 'kr',
+    img: require_('../../assets/korea.png'),
   },
 ])
+
+
+
+const selectLanguage = (item,index) => {
+  activeIndex.value = index
+  locale.value = item.value;
+  localStorage.setItem("lang", item.value);
+}
+
+const back = () => {
+  router.back()
+}
 </script>
 
 <style lang="scss" scoped>
@@ -96,6 +123,10 @@ const list = ref([
         height: 46px;
         border-radius: 50%;
         border: 2px solid #D5D5D5;
+      }
+
+      .selected {
+        background-color: #184AFF;
       }
     }
   }
