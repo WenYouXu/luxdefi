@@ -1,27 +1,20 @@
 <template>
-  <div class="setting">
+  <div class="langue">
 
     <div class="headBg"></div>
 
     <div class="content">
-      <div class="nav" @click="back()"> &lt; 设置</div>
+      <div class="nav"> &lt; 更换语言</div>
 
       <div class="settingUl">
-        <div class="settingLi">
-          <img src="@/assets/setaccount.png" alt="">
-          <div>账户信息设置</div>
-        </div>
-        <div class="settingLi">
-          <img src="@/assets/setpass.png" alt="">
-          <div>修改登录密码</div>
-        </div>
-        <div class="settingLi" @click="jump('/langue')">
-          <img src="@/assets/setlang.png" alt="">
-          <div>更换语言</div>
+        <div class="settingLi" v-for="(item,index) in list" :key="item.index">
+          <div class="left">
+            <img :src="$require_(`${item.img}`)" alt="">
+            <div>{{ item.name }}</div>
+          </div>
+          <div class="btn"></div>
         </div>
       </div>
-
-      <div class="loginBtn">登录</div>
     </div>
 
   </div>
@@ -29,21 +22,25 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
-import { useRouter } from 'vue-router';
 
-const router = useRouter()
-
-const jump = (path) => {
-  router.push(path)
-}
-const back = () => {
-  router.back()
-}
-
+const list = ref([
+  { name: 'English',
+    img: '../../assets/english.png',
+  },
+  { name: '简体中文',
+    img: '../../assets/china.png',
+  },
+  { name: '日本',
+    img: '../../assets/japan.png',
+  },
+  { name: '한국어',
+    img: '../../assets/korea.png',
+  },
+])
 </script>
 
 <style lang="scss" scoped>
-.setting {
+.langue {
   position: relative;
   color: #000000;
   font-weight: 500;
@@ -74,33 +71,33 @@ const back = () => {
 
     .settingLi {
       margin-top: 20px;
+      padding: 0 42px 0 34px;
+      box-sizing: border-box;
       display: flex;
       align-items: center;
+      justify-content: space-between;
       width: 674px;
       height: 116px;
       background-color: #fff;
       border-radius: 30px;
+      .left {
+        display: flex;
+        align-items: center;
+
+        img {
+          margin-right: 14px;
+          width: 50px;
+          height: 50px;
+        }
+      }
       
-      img {
-        margin-left: 34px;
-        margin-right: 14px;
-        width: 50px;
-        height: 50px;
+      .btn {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        border: 2px solid #D5D5D5;
       }
     }
-  }
-
-  .loginBtn{
-    margin-top: 242px;
-    width: 652px;
-    height: 96px;
-    line-height: 96px;
-    text-align: center;
-    color: #FFFFFF;
-    font-size: 27px;
-    font-weight: 500;
-    background-color: #184AFF;
-    border-radius: 96px;
   }
 }
 

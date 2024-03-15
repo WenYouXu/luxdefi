@@ -13,7 +13,7 @@
             </div>
           </div>
           <div class="right">
-            <img src="@/assets/night.png" alt="">
+            <img @click="jump('/langue')" src="@/assets/night.png" alt="">
             <img @click="jump('/setting')" src="@/assets/setting.png" alt="">
           </div>
         </div>
