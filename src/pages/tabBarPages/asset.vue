@@ -33,7 +33,7 @@
           <div class="black2 size45 b500">0.00</div>
           <div class="btn">
             <div class="left">提币</div>
-            <div class="right">存入</div>
+            <div class="right" @click="jump('/charge')">存入</div>
           </div>
         </div>
         <div class="lux">
@@ -84,7 +84,13 @@
 
 <script setup>
 import { ref, watch, onMounted } from 'vue'
+import { useRouter } from 'vue-router';
 
+const router = useRouter()
+
+const jump = (path) => {
+  router.push({path})
+}
 </script>
 
 <style lang="scss" scoped>

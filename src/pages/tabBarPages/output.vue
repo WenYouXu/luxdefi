@@ -36,7 +36,6 @@
   const finished = ref(false);
   const activeIndex = ref(0);
 
-  console.log('???');
   // setTimeout(() => {
   //   for (let i = 0; i < 10; i++) {
   //     list.value.push(list.value.length + 1);

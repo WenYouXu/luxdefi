@@ -11,6 +11,8 @@ import OrderDetail from "@/pages/orderDetail/index.vue";
 import Setting from "@/pages/setting/index.vue";
 import SetLangue from "@/pages/setting/langue.vue";
 import Share from "@/pages/share/index.vue";
+import Charge from "@/pages/charge/index.vue"
+import Withdraw from "@/pages/withdraw/index.vue"
 import Test from "@/pages/test/index.vue";
 const routes = [
   { path:"/", 
@@ -57,6 +59,14 @@ const routes = [
   {
     path:"/share",
     component:Share
+  },
+  {
+    path:"/charge",
+    component:Charge
+  },
+  {
+    path:"/withdraw",
+    component:Withdraw
   },
   { path:"/test", component: Test }
 ]
