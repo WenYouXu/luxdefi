@@ -32,7 +32,7 @@
           <div class="size24 ">可用余额(USDT)</div>
           <div class="black2 size45 b500">0.00</div>
           <div class="btn">
-            <div class="left">提币</div>
+            <div class="left" @click="jump('/withdraw')">提币</div>
             <div class="right" @click="jump('/charge')">存入</div>
           </div>
         </div>

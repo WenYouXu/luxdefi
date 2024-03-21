@@ -3,7 +3,7 @@
     <div class="headBg"></div>
 
     <div class="content">
-      <div class="nav b500" @click="back()"> &lt; 存入</div>
+      <div class="nav b500" @click="goBack()"> &lt; 存入</div>
       <div class="inner">
         <div class="b500">网络</div>
         <div class="netUl">
@@ -33,10 +33,13 @@
   </div>
 </template>
 
-<script>
-  export default {
-    
-  }
+<script setup>
+import { useRouter } from 'vue-router';
+const router = useRouter()
+
+const goBack = () => {
+  router.back()
+}
 </script>
 
 <style lang="scss" scoped>
